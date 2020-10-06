@@ -1,8 +1,9 @@
 
 // Fonction appelée lors du click du bouton
 function start() {
+  const ville = document.getElementById("city-input").value;
   // Création de l'objet apiWeather
-  const apiWeather = new API_WEATHER();
+    const apiWeather = new API_WEATHER(ville);
   // Appel de la fonction fetchTodayForecast
 
   apiWeather
@@ -16,6 +17,7 @@ function start() {
       const description = data.weather[0].description;
       const temp = data.main.temp;
       const icon = apiWeather.getHTMLElementFromIcon(data.weather[0].icon);
+      console.log(ville);
 
       // Modifier le DOM
       document.getElementById('today-forecast-main').innerHTML = main;
@@ -29,3 +31,11 @@ function start() {
       console.error(error);
     });
 }
+
+function getThreeDayForecast() {
+//  console.log(api.openweathermap.org/data/2.5/forecast/daily?q={paris}&cnt={3});
+}
+
+
+
+
