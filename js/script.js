@@ -16,7 +16,6 @@ function start() {
       const description = data.weather[0].description;
       const temp = data.main.temp;
       const icon = apiWeather.getHTMLElementFromIcon(data.weather[0].icon);
-      console.log(ville);
 
       // Modifier le DOM
       document.getElementById('today-forecast-main').innerHTML = main;
